@@ -9,7 +9,6 @@ public class BuyAsset extends Transaction {
     }
     @Override
     public void executeTransaction(){
-
         DigitalAsset cashAsset = null;
         for (DigitalAsset asset : this.walletAssets) {
             if (asset.assetName.equals("Digital Cash")) {
@@ -17,19 +16,25 @@ public class BuyAsset extends Transaction {
                 break;
             }
         }
-        if (cashAsset == null || cashAsset.getAmountOwned() < this.amount) {
-            System.out.println("Transaction Failed: Insufficient funds.");
+        if (cashAsset == null || cashAsset.getAmountOwned() < this.amount || this.amount <= 0) {
+            System.out.println("Transaction Failed: Invalid amount or insufficient funds.");
             return;
         }
-        for (DigitalAsset asset: this.walletAssets){
-            if (asset.assetName.equals(this.digitalAsset1.assetName)){
+        boolean assetFoundInWallet = false;
+
+        for (DigitalAsset asset : this.walletAssets) {
+            if (asset.assetName.equals(this.digitalAsset1.assetName)) {
                 double newAmount = asset.getAmountOwned() + (this.amount / asset.price);
                 asset.setAmountOwned(newAmount);
+                assetFoundInWallet = true;
             }
-            if (asset.assetName.equals("Digital Cash")){
-                double newAmount = asset.getAmountOwned() - this.amount;
-                asset.setAmountOwned(newAmount);
-            }
+        }
+        cashAsset.setAmountOwned(cashAsset.getAmountOwned() - this.amount);
+
+        if (!assetFoundInWallet) {
+            double newAssetAmount = this.amount / this.digitalAsset1.price;
+            this.digitalAsset1.setAmountOwned(newAssetAmount);
+            this.walletAssets.add(this.digitalAsset1);
         }
     }
 }
