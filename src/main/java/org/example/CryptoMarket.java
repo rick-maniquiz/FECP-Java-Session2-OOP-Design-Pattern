@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CryptoMarket {
 //    private static CryptoMarket instance = new CryptoMarket();
     public ArrayList<DigitalAsset> availableDigitalAssets = new ArrayList<>();
-    CryptoMarket(){
+    public CryptoMarket(){
         availableDigitalAssets.add(new Bitcoin());
         availableDigitalAssets.add(new Cardano());
         availableDigitalAssets.add(new DigitalCash()); // Not crypto: Default Available Balance
@@ -16,7 +16,7 @@ public class CryptoMarket {
         availableDigitalAssets.add(new Ethereum());
         availableDigitalAssets.add(new ShibaInu());
     }
-    DigitalAsset getDigitalAsset(String assetName){
+    public DigitalAsset getDigitalAsset(String assetName){
         for (DigitalAsset asset: this.availableDigitalAssets){
             if (asset.assetName.equals(assetName)){
                 return asset;

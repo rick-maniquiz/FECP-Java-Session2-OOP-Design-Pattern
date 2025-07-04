@@ -16,7 +16,7 @@ public abstract class Transaction {
 //        return 1; // if all is good to go, return 1;
 //    }
 
-    void makeTransaction(ArrayList<DigitalAsset> walletAssets, DigitalAsset digitalAsset1, double amount){
+    public void makeTransaction(ArrayList<DigitalAsset> walletAssets, DigitalAsset digitalAsset1, double amount){
         this.walletAssets = walletAssets;
         this.digitalAsset1 = digitalAsset1;
         this.amount = amount;
@@ -29,10 +29,10 @@ public abstract class Transaction {
 
     public void executeTransaction(){
 //        this.transactionStatusCode = 0; // Set it to 0 if it has been executed
-//        return 0;
-    }
+        //return 0;
+//    }
 
 //    int getTransactionStatusCode(){
 //        return this.transactionStatusCode;
-//    }
+   }
 }
