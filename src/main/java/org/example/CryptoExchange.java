@@ -53,7 +53,10 @@ public class CryptoExchange {
                     scanner.nextLine();
 
                     double digitalCashBalance = wallet.getBalanceOfDigitalAsset("Digital Cash");
-                    if (buyAmount <= 0 || buyAmount > digitalCashBalance) {
+                    if (buyAmount <= 0) {
+                        System.out.println("Invalid amount.");
+                        break;
+                    } else if (buyAmount > digitalCashBalance) {
                         System.out.println("Invalid amount. You only have ₱" + digitalCashBalance);
                         break;
                     }
@@ -81,7 +84,10 @@ public class CryptoExchange {
                     scanner.nextLine();
 
                     double ownedAmount = wallet.getBalanceOfDigitalAsset(sellAsset.assetName);
-                    if (sellAmount <= 0 || sellAmount > ownedAmount) {
+                    if (sellAmount <= 0) {
+                        System.out.println("Invalid amount");
+                        break;
+                    } else if (sellAmount > ownedAmount) {
                         System.out.println("Invalid amount. You only own " + ownedAmount + " " + sellAsset.assetName);
                         break;
                     }
