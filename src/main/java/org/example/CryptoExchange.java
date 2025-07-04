@@ -19,7 +19,7 @@ import java.util.*;
 public class CryptoExchange {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Wallet wallet = new Wallet(10000);
+        Wallet wallet = new Wallet(100000);
         CryptoMarket market = new CryptoMarket();
 
         boolean running = true;
@@ -28,7 +28,8 @@ public class CryptoExchange {
             System.out.println("1. View Wallet");
             System.out.println("2. Buy Asset");
             System.out.println("3. Sell Asset");
-            System.out.println("4. Exit");
+            System.out.println("4. Deposit Digital Cash");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -96,9 +97,25 @@ public class CryptoExchange {
 
 
                 case 4:
+                    System.out.print("Enter amount to deposit in ₱: ");
+                    double depositAmount = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    if (depositAmount <= 0) {
+                        System.out.println("Invalid deposit amount.");
+                        break;
+                    }
+
+                    wallet.addDigitalCash(depositAmount);
+                    System.out.println("PHP" + depositAmount + " added to your Digital Cash.");
+                    System.out.println("Current Digital Cash balance: ₱" + wallet.getBalanceOfDigitalAsset("Digital Cash"));
+                    break;
+
+                case 5:
                     running = false;
                     System.out.println("Exiting system.");
                     break;
+
 
                 default:
                     System.out.println("Invalid choice. Try again.");
