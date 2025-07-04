@@ -69,8 +69,8 @@ public class CryptoExchange {
                 case 3:
                     System.out.print("Enter asset name to sell: ");
                     String sellAssetName = scanner.nextLine();
-                    DigitalAsset sellAsset = wallet.getDigitalAsset(sellAssetName);
-                    if (sellAsset == null || sellAsset instanceof DigitalCash) {
+                    DigitalAsset sellAsset = market.getDigitalAsset(sellAssetName);
+                    if (sellAsset.assetName.equals("Invalid Asset")) {
                         System.out.println("You don't own this asset or it's not sellable.");
                         break;
                     }
