@@ -19,4 +19,16 @@ public abstract class DigitalAsset {
         this.amountOwned = newAmountOwned;
     }
 
+    public String getAssetName() {
+        return assetName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
 }

@@ -16,7 +16,7 @@ public abstract class Transaction {
 //        return 1; // if all is good to go, return 1;
 //    }
 
-    void makeTransaction(ArrayList<DigitalAsset> walletAssets, DigitalAsset digitalAsset1, double amount){
+    public void makeTransaction(ArrayList<DigitalAsset> walletAssets, DigitalAsset digitalAsset1, double amount){
         this.walletAssets = walletAssets;
         this.digitalAsset1 = digitalAsset1;
         this.amount = amount;
