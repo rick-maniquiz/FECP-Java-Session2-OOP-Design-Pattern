@@ -69,5 +69,15 @@ class BuyAssetTest {
         buyAsset.makeTransaction(walletAssets, bitcoin, amountToSpend);
         buyAsset.executeTransaction();
         assertEquals(2.0, bitcoin.getAmountOwned(), "The amount of Bitcoin should remain unchanged.");
+        assertEquals(5000000.0, digitalCash.getAmountOwned(), "The amount of Digital Cash should remain unchanged.");
+    }
+
+    @Test
+    void shouldNotBuyAssetIfAmountIsNegative() {
+        double amountToSpend = -1000000.0; // Negative amount
+        buyAsset.makeTransaction(walletAssets, bitcoin, amountToSpend);
+        buyAsset.executeTransaction();
+        assertEquals(2.0, bitcoin.getAmountOwned(), "The amount of Bitcoin should remain unchanged.");
+        assertEquals(5000000.0, digitalCash.getAmountOwned(), "The amount of Digital Cash should remain unchanged.");
     }
 }
