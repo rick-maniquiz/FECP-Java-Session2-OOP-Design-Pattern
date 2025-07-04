@@ -10,6 +10,8 @@ public class CryptoExchangeDemo {
         Wallet myWallet = new Wallet(1000000);
         CryptoMarket market = new CryptoMarket();
 
+        // NOTE: The Transaction classes do not check whether the
+
         System.out.println("Initial Digital Cash Balance: " + myWallet.getBalanceOfDigitalAsset("Digital Cash"));
 
         System.out.println("Testing to buy the assets");

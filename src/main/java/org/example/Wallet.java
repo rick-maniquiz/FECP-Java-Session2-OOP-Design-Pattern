@@ -54,12 +54,15 @@ public class Wallet {
     }
 
     void makeTransaction(DigitalAsset digitalAsset, double amount){
+        // NOTE: To make a better test cases for checking whether the transaction went through or not,
+        // kindly consider adding the error/validity checks here
         this.transactionType.makeTransaction(this.digitalAssets, digitalAsset, amount);
         System.out.println("You are about to " + this.transactionType.transactionType + " " + amount + " worth of " + digitalAsset.assetName + ".");
         System.out.println("Would you like to proceed?");
     }
 
     void executeTransaction(){
+        // adding the error/validity checks might also work here
         for (DigitalAsset asset: this.digitalAssets){
             if (asset.assetName.equals(this.transactionType.digitalAsset1.assetName)){
                 this.transactionType.executeTransaction();
