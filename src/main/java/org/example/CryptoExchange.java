@@ -7,8 +7,8 @@ public class CryptoExchange {
     public static void main(String[] args){
         Wallet myWallet = new Wallet();
         myWallet.setTransactionType(new BuyAsset());
-        myWallet.transactionType.makeTransaction(new Bitcoin(), 10000);
-        myWallet.transactionType.executeTransaction();
+        myWallet.makeTransaction(new Bitcoin(), 10000);
+        myWallet.executeTransaction();
 
     }
 }
