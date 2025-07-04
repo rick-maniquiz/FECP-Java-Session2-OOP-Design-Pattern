@@ -1,7 +1,10 @@
 package org.example.Transactions;
 
+import org.example.CryptoMarket;
 import org.example.DigitalAsset;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,8 +12,44 @@ import static org.junit.jupiter.api.Assertions.*;
 class BuyAssetTest {
     private BuyAsset buyAsset;
     private ArrayList<DigitalAsset> walletAssets;
-    private DigitalAsset cryptoAsset;
-    private DigitalAsset cashAsset;
+    private DigitalAsset bitcoin;
+    private DigitalAsset digitalCash;
+    private CryptoMarket cryptoMarket;
+
+    @BeforeEach
+    void setup(){
+        cryptoMarket = new CryptoMarket();
+        buyAsset = new BuyAsset();
+        walletAssets = new ArrayList<>();
+
+        bitcoin = cryptoMarket.getDigitalAsset("Bitcoin");
+        digitalCash = cryptoMarket.getDigitalAsset("Digital Cash");
+
+        bitcoin.setAmountOwned(2.0);
+        digitalCash.setAmountOwned(5000000.0);
+
+        walletAssets.add(bitcoin);
+        walletAssets.add(digitalCash);
+    }
+
+    @Test
+    void shouldBuyAssetAndUpdateWallet() {
+        double amountToSpend = 3000000.0;
+        buyAsset.makeTransaction(walletAssets, bitcoin, amountToSpend);
+        buyAsset.executeTransaction();
+        assertEquals(5.0, bitcoin.getAmountOwned(), "The amount of Bitcoin should increase correctly.");
+        assertEquals(2000000.0, digitalCash.getAmountOwned(), "The amount of Digital Cash should decrease correctly.");
+    }
+
+    @Test
+    void shouldNotBuyAssetIfInsufficientFunds() {
+        double amountToSpend = 6000000.0; // More than available Digital Cash
+        buyAsset.makeTransaction(walletAssets, bitcoin, amountToSpend);
+        buyAsset.executeTransaction();
+        assertEquals(2.0, bitcoin.getAmountOwned(), "The amount of Bitcoin should remain unchanged.");
+        assertEquals(5000000.0, digitalCash.getAmountOwned(), "The amount of Digital Cash should remain unchanged.");
+    }
+
 
 
     
