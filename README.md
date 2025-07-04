@@ -24,7 +24,7 @@ The project is organized into several packages to separate concerns, making the 
 
 #### Project Structure
 
-![Project Structure](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/408d02b17532b223cd585ced3dfd670367c73e73/img/Screenshot%202025-07-04%20at%204.47.21%E2%80%AFPM.png)
+![Project Structure](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/41a2afc1a018e1fd5ff8a123ed59e97b57a5aeff/img/Screenshot%202025-07-04%20at%204.47.21%E2%80%AFPM.png)
 
 ## Output Screenshot
 
