@@ -71,6 +71,17 @@ public class Wallet {
 
     }
 
+    void displayAllDigitalAssets(){
+        System.out.println("=== Available Assets ===");
+        for (DigitalAsset asset: this.digitalAssets){
+            System.out.println("Asset Name: "+asset.assetName);
+            System.out.println("Ticker: "+asset.assetTicker);
+            System.out.println("Price: "+asset.price);
+            System.out.println("Amount Owned: "+asset.getAmountOwned());
+            System.out.println("-----------------------");
+        }
+    }
+
 
 
 
