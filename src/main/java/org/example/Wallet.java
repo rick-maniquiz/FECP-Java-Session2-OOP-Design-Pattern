@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class Wallet {
     public Transaction transactionType;
     private ArrayList<DigitalAsset> digitalAssets = new ArrayList<>();
-
     Wallet(){
 
     }
@@ -21,6 +20,9 @@ public class Wallet {
     void setTransactionType(Transaction transactionType){
         this.transactionType = transactionType;
     }
+
+
+
 
 
 

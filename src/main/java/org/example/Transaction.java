@@ -16,23 +16,10 @@ public abstract class Transaction {
         return 1; // if all is good to go, return 1;
     }
 
-    int checkTransactionValidity(DigitalAsset digitalAsset1, DigitalAsset digitalAsset2, double amount){
-        // Check if the transaction will be valid (i.e. if the amount is right, balance is sufficient, etc.)
-        // Return status codes to see what is wrong,
-        // for example return 101 if the valid is negative, 102 if balance is insufficient.
-        return 1; // if all is good to go, return 1;
-    }
-
     void makeTransaction(DigitalAsset digitalAsset1, double amount){
         this.digitalAsset1 = digitalAsset1;
         this.amount = amount;
         this.transactionStatusCode = checkTransactionValidity(digitalAsset1, amount);
-    }
-    void makeTransaction(DigitalAsset digitalAsset1, DigitalAsset digitalAsset2, double amount){
-        this.digitalAsset1 = digitalAsset1;
-        this.digitalAsset2 = digitalAsset2;
-        this.amount = amount;
-        this.transactionStatusCode = checkTransactionValidity(digitalAsset1, digitalAsset2, amount);
     }
 
     void checkTransactionDetails(){
