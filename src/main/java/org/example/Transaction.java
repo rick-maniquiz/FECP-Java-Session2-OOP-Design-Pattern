@@ -1,14 +1,10 @@
 package org.example;
 
 public abstract class Transaction {
-    String transactionType;
-    DigitalAsset digitalAsset1, digitalAsset2;
-    double amount;
+    public String transactionType;
+    public DigitalAsset digitalAsset1, digitalAsset2;
+    public double amount;
     private int transactionStatusCode;
-
-    Transaction(){
-
-    }
 
     int checkTransactionValidity(DigitalAsset digitalAsset1, double amount){
         // Check if the transaction will be valid (i.e. if the amount is right, balance is sufficient, etc.)
