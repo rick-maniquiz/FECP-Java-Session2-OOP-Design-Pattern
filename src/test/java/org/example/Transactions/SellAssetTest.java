@@ -98,4 +98,20 @@ class SellAssetTest {
         assertEquals(5000000.0, digitalCash.getAmountOwned(), "Cash balance should not change.");
     }
 
+    @Test
+    void shouldNotSellIfDigitalCashNotInWallet() {
+        walletAssets.remove(digitalCash);
+        double amountToSell = 1.0;
+        sellAsset.makeTransaction(walletAssets, bitcoin, amountToSell);
+        sellAsset.executeTransaction();
+        assertEquals(2.0, bitcoin.getAmountOwned(), "Bitcoin amount should not change.");
+    }
+
+    @Test
+    void shouldNotSellNullAsset() {
+        sellAsset.makeTransaction(walletAssets, null, 1.0);
+        sellAsset.executeTransaction();
+        assertEquals(2.0, bitcoin.getAmountOwned(), "Bitcoin amount should not change.");
+        assertEquals(5000000.0, digitalCash.getAmountOwned(), "Cash amount should not change.");
+    }
 }

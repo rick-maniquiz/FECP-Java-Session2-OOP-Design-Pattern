@@ -19,7 +19,7 @@ public class SellAsset extends Transaction {
                 cashAsset = asset;
             }
         }
-        if (assetToSell == null || cashAsset == null || this.amount <= 0 || assetToSell.getAmountOwned() < this.amount || assetToSell.price < 0) {
+        if (this.digitalAsset1 == null || assetToSell == null || cashAsset == null || this.amount <= 0 || assetToSell.getAmountOwned() < this.amount || assetToSell.price < 0) {
             System.out.println("Transaction Failed: Invalid asset, amount, balance, or price.");
             return;
         }
