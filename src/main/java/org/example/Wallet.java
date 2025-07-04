@@ -82,6 +82,14 @@ public class Wallet {
         }
     }
 
+    double calculateTotalWalletValue(){
+        double value = 0.0;
+        for (DigitalAsset asset: this.digitalAssets){
+            value += asset.price * asset.getAmountOwned();
+        }
+        return value;
+    }
+
 
 
 
