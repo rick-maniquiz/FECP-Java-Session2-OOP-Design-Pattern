@@ -22,32 +22,26 @@ This project is a command-line based cryptocurrency exchange simulation built in
 
 The project is organized into several packages to separate concerns, making the codebase clean and maintainable.
 
-src
-└── org
-└── example
-├── DigitalAssets
-│ ├── Bitcoin.java
-│ ├── Cardano.java
-│ ├── DigitalCash.java
-│ ├── Dogecoin.java
-│ ├── Ethereum.java
-│ ├── InvalidAsset.java
-│ └── ShibaInu.java
-│
-├── Transactions
-│ ├── BuyAsset.java
-│ └── SellAsset.java
-│
-├── CryptoExchange.java // Main method to run the application
-├── CryptoMarket.java // Factory/Registry for available assets
-├── DigitalAsset.java // Abstract base class for all assets
-├── Transaction.java // Abstract base class for transactions
-└── Wallet.java // Manages user's assets and balance
+#### Project Structure
+
+![Project Structure](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/408d02b17532b223cd585ced3dfd670367c73e73/img/Screenshot%202025-07-04%20at%204.47.21%E2%80%AFPM.png)
 
 ## Output Screenshot
 
 Below is a sample screenshot demonstrating the application's command-line interface during a "buy" transaction.
+
+#### Buy Asset
+
 ![Buy Asset](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/32896118491716407187e248f752fa55abb9cee5/img/BuyAsset.png)
+
+#### Sell Asset
+
 ![Sell Asset](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/32896118491716407187e248f752fa55abb9cee5/img/SellAsset.png)
+
+#### View Wallet
+
 ![View Wallet](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/32896118491716407187e248f752fa55abb9cee5/img/ViewWallet.png)
+
+#### Deposit Digital Cash
+
 ![Deposit Digital Cash](https://github.com/rick-maniquiz/FECP-Java-Session2-OOP-Design-Pattern/blob/32896118491716407187e248f752fa55abb9cee5/img/DepositDigitalCash.png)
