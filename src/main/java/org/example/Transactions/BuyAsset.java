@@ -16,8 +16,8 @@ public class BuyAsset extends Transaction {
                 break;
             }
         }
-        if (cashAsset == null || cashAsset.getAmountOwned() < this.amount || this.amount <= 0) {
-            System.out.println("Transaction Failed: Invalid amount or insufficient funds.");
+        if (cashAsset == null || this.amount <= 0 || cashAsset.getAmountOwned() < this.amount || this.digitalAsset1.price <= 0) {
+            System.out.println("Transaction Failed: Invalid amount, insufficient funds, or invalid asset price.");
             return;
         }
         boolean assetFoundInWallet = false;
