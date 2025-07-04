@@ -5,6 +5,8 @@ public abstract class DigitalAsset {
     public double price;
     protected double amountOwned = 0;
 
+
+
     public void displayDetails(){
 
     }

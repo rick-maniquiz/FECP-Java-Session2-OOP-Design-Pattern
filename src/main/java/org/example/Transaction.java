@@ -1,7 +1,10 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public abstract class Transaction {
     public String transactionType;
+    ArrayList<DigitalAsset> walletAssets;
     public DigitalAsset digitalAsset1, digitalAsset2;
     public double amount;
     private int transactionStatusCode;

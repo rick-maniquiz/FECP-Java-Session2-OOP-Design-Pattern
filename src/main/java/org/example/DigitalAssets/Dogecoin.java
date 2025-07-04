@@ -7,7 +7,7 @@ public class Dogecoin extends DigitalAsset {
     public Dogecoin(){
         this.assetName = "Dogecoin";
         this.assetTicker = "$DOGE";
-        this.price = 1;
+        this.price = 3;
     }
 
 }

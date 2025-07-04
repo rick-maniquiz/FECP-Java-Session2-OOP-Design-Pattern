@@ -7,7 +7,7 @@ public class ShibaInu extends DigitalAsset {
     public ShibaInu(){
         this.assetName = "Shiba Inu";
         this.assetTicker = "$SHIB";
-        this.price = 1;
+        this.price = 2;
     }
 
 }
