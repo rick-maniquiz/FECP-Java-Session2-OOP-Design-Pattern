@@ -29,10 +29,10 @@ public abstract class Transaction {
 
     public void executeTransaction(){
 //        this.transactionStatusCode = 0; // Set it to 0 if it has been executed
-//        return 0;
-    }
+        //return 0;
+//    }
 
 //    int getTransactionStatusCode(){
 //        return this.transactionStatusCode;
-//    }
+   }
 }
